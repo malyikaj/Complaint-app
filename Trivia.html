@@ -23,378 +23,437 @@
     
   </main> 
 <script>
-    var player1Points = 0; 
-var player1Rank = ''; //Store the rank of the player
-// When Trivia begins for Player One, There are no correct answers   
-var player2Points = 0;
-var player2Rank = '';  //Store the rank of the player  
-
-
-function beginPlay() {
-
-
-// When Trivia begins for Player One, There are no correct answers  
-//-------------------------------------------------------------------------------------------------------------//
+  function beginPlay() {
   
-//Player One 1st trivia question   
-const player1Question = prompt(`Player 1: Which planet is mostly made of water?`);
-const correctAnswer1 = 'EARTH';  
+  var player1Name = prompt("Enter your name, Player One");
+  var player2Name = prompt("Enter your name, Player Two"); 
+    
+  // When Trivia begins for Player One and Player Two, it starts with are no correct answers    
+  var player1RoundPoints = 0; 
+  var player2RoundPoints = 0;
   
-if (player1Question.toUpperCase() === correctAnswer1) {
-  alert(`Thats right! You earned 100 points!`);
-  player1Points += 100;
+  //Final Player points starts at 0 and will be collected for the final score 
+  var finalPlayer1Points = 0;
+  var finalPlayer2Points = 0;
+    
+  var player1Rank; //Store the rank of the player  
+  var player2Rank;  //Store the rank of the player  
+    
+  var winner;  
   
-} else {
-  
-  alert(`Thats not right! The correct answer was : ${correctAnswer1}. You lost <strong>100<strong> points.`);
-  player1Points -= 100;
-}  
-  
-//-------------------------------------------------------------------------------------------------------------//  
-  
-//Player Two 1st trivia question  
-let player2Question = prompt(`Player 2: What is the rarest M&M color?`);
-const correctAnswer2 = 'BROWN';  
-  
-if (player2Question.toUpperCase() === correctAnswer2) {
-  alert("Thats right! You earned 100 points!");
-  player2Points += 100;
-  
-} else {
-  
-  alert(`Not quite it....the right answer was : ${correctAnswer2}. You lost 100 points.`);
-  player2Points -= 100;
-}
-  
-//-------------------------------------------------------------------------------------------------------------// 
-  
-//Player One 2nd trivia question 
-let player1Question2 = prompt(`Player 1: In a website browser address bar, what does “www” stand for?`);
-const correctAnswer3 = 'WORLD WIDE WEB';  
-  
-if (player1Question2.toUpperCase() === correctAnswer3) {
-  alert("Thats right! You earned 100 points!");
-  player1Points += 100;
-  
-} else {
-  
-  alert(`Almost! ${correctAnswer3} was the right answer. 100 points have been lost.`);
-  player1Points -= 100;
-}
-  
-                  }  
-
-//-------------------------------------------------------------------------------------------------------------// 
-//Levels of Rank for Player 1  
- if (player1Points === 500) {
-  player1Rank = 'Smarty Pants';
-} else if (player1Points >= 300) {
-  player1Rank = 'Studious';
-} else if (player1Points >= 200) {
-  player1Rank = 'Need of improvement';
-} else {
-  player1Rank = "Class Dunce"
-}
-  
-//-------------------------------------------------------------------------------------------------------------//   
-//Levels of Rank for Player 2
- if (player2Points === 500) {
-  player2Rank = 'Smarty Pants';
-} else if (player2Points >= 300) {
-  player2Rank = 'Studious';
-} else if (player2Points >= 200) {
-  player2Rank = 'Need of improvement';
-} else {
-  player2Rank = "Class Dunce"
-}  
-  
-let winner= '';
-  
-if (player1Rank > player2Rank ) {
- winner = player1Name ;   
-} else {
- winner = player2Name ; 
-}  
+  alert("Round 1. Each player has two questions.");
   
   
-// Select the main element on HTML  
-const main = document.querySelector('main');  
-//Show results to the <main element>  
-main.innerHTML = 
-  `
-  <h1>The Winner is: ${winner}</h1>
-  
-  <h2>Player 1: ${player1Name}, you've earned ${player1Rank} rank!<h2>
-  <p>Points earned: <strong>${player1Points}</strong></p>
-  
-  <h2>Player 2: ${player2Name}, you've earned ${player2Rank} rank!<h2>
-  <p>Points earned: <strong>${player2Points}</strong></p>
-  
-  `;   
-
-
-
-
-function roundTwo() {
-  
--------------------------------------------------------------------------------------------------------------// 
-  
-//Player Two 2nd trivia question   
-let player2Question2 = prompt(`Player 2: Which planet is mostly made of water?`);
-let correctAnswer4 = 'EARTH';  
-  
-if (player2Question2.toUpperCase() === correctAnswer4) {
-  alert("Thats right! You earned 100 points!");
-  player2Points += 100;
-  
-} else {
-  
-  alert(`Thats not right! The correct answer was : ${correctAnswer4}. You lost 100 points.`);
-  player2Points -= 100;
-}    
-  
-//-------------------------------------------------------------------------------------------------------------// 
-  
-//Player One 3rd trivia question  
-let player1Question3 = prompt(`Player 1: Which planet is mostly made of water?`);
-let correctAnswer5 = 'EARTH';  
-  
-if (player1Question3.toUpperCase() === correctAnswer5) {
-  alert("Thats right! You earned 100 points!");
-  player1Points += 100;
-  
-} else {
-  
-  alert(`Thats not right! The correct answer was : ${correctAnswer5}. You lost 100 points.`);
-  player1Points -= 100;
-}  
-  
-                   }  
-  
-  
-  
-  
-  
-// //-------------------------------------------------------------------------------------------------------------// 
-  
-// //Player Two 3rd trivia question
-// let player2Question3 = prompt(`Player 2: Which planet is mostly made of water?`);
-// let correctAnswer6 = 'EARTH';  
-  
-// if (player2Question.toUpperCase() === correctAnswer6) {
-//   alert("Thats right! You earned 100 points!");
-//   player2Points += 100;
-  
-// } else {
-  
-//   alert(`Thats not right! The correct answer was : ${correctAnswer6}. You lost 100 points.`);
-//   player2Points -= 100;
-// }    
+  //-------------------------------------------------------------------------------------------------------------//
+  // (1)  
+  //Player One 1st trivia question   
+  var player1Question1 = prompt(`Player 1: Which video game company made the Dreamcast console?`);
+  // const correctAnswer1 = 'SEGA';
+  const correctAnswer1 = 'TEST';  
+    
+  if (player1Question1.toUpperCase() === correctAnswer1) {
+    alert(`That's right! You earned 100 points!`);
+    player1RoundPoints += 100;
+    finalPlayer1Points += 100; 
+    
+  } else {
+    
+    alert(`Thats not right! The correct answer was : ${correctAnswer1}. 0 points earned.`);
+    
+  }  
+    
+  //-------------------------------------------------------------------------------------------------------------//  
+  //(2)  
+  //Player Two 1st trivia question  
+  var player2Question2 = prompt(`Player 2: What is the rarest M&M color?`);
+  const correctAnswer2 = 'TEST';
+  // const correctAnswer2 = 'BROWN';  
+    
+  if (player2Question2.toUpperCase() === correctAnswer2) {
+    alert("Thats right! You earned 100 points!");
+    player2RoundPoints += 100;
+    finalPlayer2Points += 100;
+    
+  } else {
+    
+    alert(`Not quite it...the right answer was : ${correctAnswer2}. 0 points earned.`);
    
-// //-------------------------------------------------------------------------------------------------------------// 
+  }
   
-// //Player One 4th trivia question
-// let player1Question4 = prompt(`Player 1: Which planet is mostly made of water?`);
-// let correctAnswer7 = 'EARTH';  
-  
-// if (player1Question4.toUpperCase() === correctAnswer7) {
-//   alert("Thats right! You earned 100 points!");
-//   player1Points += 100;
-  
-// } else {
-  
-//   alert(`Thats not right! The correct answer was : ${correctAnswer7}. You lost 100 points.`);
-//   player1Points -= 100;
-// }    
-  
-// //-------------------------------------------------------------------------------------------------------------// 
-  
-// //Player Two 4th trivia question
-
-// let player2Question4 = prompt(`Player 2: Which planet is mostly made of water?`);
-// let correctAnswer8 = 'EARTH';  
-  
-// if (player2Question4.toUpperCase() === correctAnswer8) {
-//   alert("Thats right! You earned 100 points!");
-//   player2Points += 100;
-  
-// } else {
-  
-//   alert(`Thats not right! The correct answer was : ${correctAnswer8}. You lost 100 points.`);
-//   player2Points -= 100;
-// }    
-  
-  
-// //-------------------------------------------------------------------------------------------------------------// 
-  
-// //Player One 5th trivia question 
-// let player1Question5 = prompt(`Player 1: Which planet is mostly made of water?`);
-// let correctAnswer9 = 'EARTH';  
-  
-// if (player1Question5.toUpperCase() === correctAnswer9) {
-//   alert("Thats right! You earned 100 points!");
-//   player1Points += 100;
-  
-// } else {
-  
-//   alert(`Thats not right! The correct answer was : ${correctAnswer9}. You lost 100 points.`);
-//   player1Points -= 100;
-// }  
-  
-// //-------------------------------------------------------------------------------------------------------------// 
-  
-// //Player Two 5th trivia question 
-// let player2Question5 = prompt(`Player 2: Which planet is mostly made of water?`);
-// let correctAnswer10 = 'EARTH';  
-  
-// if (player2Question5.toUpperCase() === correctAnswer10) {
-//   alert("Thats right! You earned 100 points!");
-//   player2Points += 100;
-  
-// } else {
-  
-//   alert(`Thats not right! The correct answer was : ${correctAnswer10}. You lost 100 points.`);
-//   player2Points -= 100;
-// }     
-  
-//-------------------------------------------------------------------------------------------------------------// 
-//Levels of Rank for Player 1  
- if (player1Points === 500) {
-  player1Rank = 'Smarty Pants';
-} else if (player1Points >= 300) {
-  player1Rank = 'Studious';
-} else if (player1Points >= 200) {
-  player1Rank = 'Need of improvement';
-} else {
-  player1Rank = "Class Dunce"
-}
-  
-//-------------------------------------------------------------------------------------------------------------//   
-//Levels of Rank for Player 2
- if (player2Points === 500) {
-  player2Rank = 'Smarty Pants';
-} else if (player2Points >= 300) {
-  player2Rank = 'Studious';
-} else if (player2Points >= 200) {
-  player2Rank = 'Need of improvement';
-} else {
-  player2Rank = "Class Dunce"
-}  
-  
-let winner= '';
-  
-if (player1Rank > player2Rank ) {
- winner = player1Name ;   
-} else {
- winner = player2Name ; 
-}  
-  
-  
-// Select the main element on HTML  
-const main = document.querySelector('main');  
-//Show results to the <main element>  
-main.innerHTML = 
-  `
-  <h1>The Winner is: ${winner}</h1>
-  
-  <h2>Player 1: ${player1Name}, you've earned ${player1Rank} rank!<h2>
-  <p>Points earned: <strong>${player1Points}</strong></p>
-  
-  <h2>Player 2: ${player2Name}, you've earned ${player2Rank} rank!<h2>
-  <p>Points earned: <strong>${player2Points}</strong></p>
-  
-  `;     
-
-
-
-
-
-
-
-
-
-
-
-// document.querySelector('h2').innerHTML = player2Name;
-// const player2Question = promt(`Which planet is mostly water?`);
-// const correctAnswer = 'Earth';
-
-//  function player1() {          
-//    let player1Name = document.getElementById("player1Input").value;
-//         if (player1Name != null) {
-//         document.getElementById("Player1").innerHTML =
-//         `<p>
-//         Hello ${player1Name}! Ready to play some trivia?
-//         </p>`
-        
-//         ;
-//   }
-//  }  
-
-// function player1Name() {
-//   let player1Name = prompt("Please enter your name", "Your name here");
-//   if (player1Name != null) {
-//     document.getElementById("Player1").innerHTML =
-//     `Hello ${player1Name}! Ready to play some trivia?`;
-//   }
-// }
-
-// function player2Name() {
-//   let player2Name = prompt("Please enter your name", "Your name here");
-//   if (player2Name != null) {
-//     document.getElementById("Player1").innerHTML =
-//     `Hello ${player2Name}! Let's go!`;
-//   }
-// }
-// var player1Name = document.getElementById("name").nextSibling.innerHTML; 
-//   document.getElementById("Player1").innerHTML = player1Name;
-//   let player1Name = event.target.nextSibling.innerHTML;
-
-
-
-// Booleen question option
-// When the game begins, the guess is falsey
-// if rightAnswer = false;
-// const answer = MERCURY; //The right answer
-// const guess = //prompt(`Which planet is closest to the sun?`);
-
-// // 1. Test if a players guess matches the answer
-// // 2. Change the value of rightAnswer to true if they match
-// if (rightAnswer === true) {
-//   document.getElementById('answer-box').innerHTML = `Thats right!`;
-// } else {
-//   document.getElementById('answer-box').innerHTML = `Thats not right! The correct answer was : ${answer}`;
-// }
-
-// function rightAnswer() {
-//   document.getElementById("demo").innerHTML = "That's right!";
-// }
-
-// function wrongAnswer() {
-//   document.getElementById("demo").innerHTML = "That's not right!";
-// }
-
-// function myFunction() {
-//   document.getElementById("demo").innerHTML = "Paragraph changed!";
-// }
-// const message
+    
       
-// let playerOneScore = 0;
-// let playerTwoScore = 0;
-
-// let score = 0;
-// score += __;
-
-// let playOneFinalScore = 0;
-// let playTwoFinalScore = 0;
-
-
-
-// const button = document.getElementById('button');
-// const input = document.getElementById('input');
-
-// button.addEventListener('click', () => {
-//   heading.style.color = input.value;
+  //-------------------------------------------------------------------------------------------------------------// 
+  //(3)  
+  //Player One 2nd trivia question 
+  var player1Question3 = prompt(`Player 1: In a website browser address bar, what does “WWW” stand for?`); 
+  // const correctAnswer3 = 'WORLD WIDE WEB';  
+  const correctAnswer3 = 'TEST';   
+    
+  if (player1Question3.toUpperCase() === correctAnswer3) {
+    alert("Thats right! You earned 100 points!");
+    player1RoundPoints += 100;
+    finalPlayer1Points += 100;
+  } else {
+    
+    alert(`Almost! ${correctAnswer3} was the right answer. 0 points earned.`);
+    
+  }
+    
+                  
+  //--------------------------------------------------------------------------------------------------------------// 
+  //(4)  
+  //Player Two 2nd trivia question   
+  var player2Question4 = prompt(`Player 2: What is Will Smith's real first name?`);
+  // const correctAnswer4 = 'WILLARD'; 
+  const correctAnswer4 = 'TEST';    
+    
+  if (player2Question4.toUpperCase() === correctAnswer4) {
+    alert("That's right! You earned 100 points!");
+    player2RoundPoints += 100;
+    finalPlayer2Points += 100;
+  } else {
+    
+    alert(`Thats not right! The correct answer was : ${correctAnswer4}. 0 points earned.`);
+    
+  }    
+    
+  
+  if (player1RoundPoints == player2RoundPoints){
+    alert(`It's a tie! ${player1Name} has ${player1RoundPoints} and so does ${player2Name} with ${player2RoundPoints} points!
+          Next round!`)
+    
+  } else if (player1RoundPoints > player2RoundPoints ) {
+   winner = player1Name ;
+   alert(`${winner} is the winner for this round! ${player1Name} has ${player1RoundPoints} so far and ${player2Name} has ${player2RoundPoints} points!`);  
+  } else {
+   winner = player2Name ;
+   alert(`${winner} is the winner for this round! ${player1Name} has ${player1RoundPoints} so far and ${player2Name} has ${player2RoundPoints} points!`);  
+  }   
+  
+  
+  
+  //-------------------------------------------------------------------------------------------------------------// 
+  alert("Round 2");  
+  var player1Round2Points = 0; 
+  var player2Round2Points = 0; 
+  //(5)  
+  //Player One 3rd trivia question  
+  let player1Question5 = prompt(`Player 1: Which team holds the record for the most consecutive NBA titles?`);
+  // const correctAnswer5 = 'LAKERS';  
+  const correctAnswer5 = 'TEST';    
+    
+  if (player1Question5.toUpperCase() === correctAnswer5) {
+    alert("Thats right! You earned 100 points!");
+    player1Round2Points += 100;
+    finalPlayer1Points += 100;
+  } else {
+    
+    alert(`Thats not right! The correct answer was : ${correctAnswer5}. 0 points earned.`);
+   
+  }  
+     
+  //-------------------------------------------------------------------------------------------------------------// 
+  //(6)  
+  //Player Two 3rd trivia question
+  var player2Question6 = prompt(`Player 2: In the Marvel cinematic universe, what is the name of Thors home planet?`);
+  // const correctAnswer6 = 'ASGARD';
+  const correctAnswer6 = 'TEST';    
+    
+  if (player2Question6.toUpperCase() === correctAnswer6) {
+    alert("Thats right! You earned 100 points!");
+    player2Round2Points += 100;
+    finalPlayer2Points += 100;
+  } else {
+    
+    alert(`Thats not right! The correct answer was : ${correctAnswer6}. 0 points earned.`);
+    
+  }    
+     
+  //-------------------------------------------------------------------------------------------------------------// 
+  //(7)  
+  //Player One 4th trivia question
+  var player1Question7 = prompt(`Player 1: Who is Marshal Mathers?`);
+  // const correctAnswer7 = 'EMINEM'; 
+  const correctAnswer7 = 'TEST';    
+    
+  if (player1Question7.toUpperCase() === correctAnswer7) {
+    alert("Thats right! You earned 100 points!");
+    player1Round2Points += 100;
+    finalPlayer1Points += 100;
+    
+  } else {
+    
+    alert(`Thats not right! The correct answer was : ${correctAnswer7}. 0 points earned.`);
+    
+  }    
+    
+  //-------------------------------------------------------------------------------------------------------------// 
+  //(8)  
+  //Player Two 4th trivia question
+  
+  var player2Question8 = prompt(`Player 2: Where was Cardi B born and raised?`);
+  // const correctAnswer8 = 'BRONX';  
+  const correctAnswer8 = 'TEST';  
+    
+  if (player2Question8.toUpperCase() === correctAnswer8) {
+    alert("Thats right! You earned 100 points!");
+    player2RoundPoints += 100;
+    finalPlayer2Points += 100;
+    
+  } else {
+    
+    alert(`Thats not right! The correct answer was : ${correctAnswer8}. 0 points earned.`);
+    
+  }    
+  
+  
+  if (player1Round2Points > player2Round2Points ) {
+   winner = player1Name ;   
+  } else {
+   winner = player2Name ; 
+  }   
+    
+  alert(`${winner} is the winner for this round! ${player1Name} has ${player1Round2Points} for this round and ${player2Name} has ${player2Round2Points} points for this round!`);   
+    
+    
+  
+  //-------------------------------------------------------------------------------------------------------------// 
+  //(9)
+  alert("Round 3 Final Round. Only 1 question per player.");    
+    
+  var player1Round3Points = 0; 
+  var player2Round3Points = 0; 
+  
+  //Player One 5th trivia question 
+  var player1Question9 = prompt(`Player 1: Which singer’s real name is Stefani Joanne Angelina Germanotta?`);
+  // const correctAnswer9 = 'LADY GAGA';
+  const correctAnswer9 = 'TEST';    
+    
+  if (player1Question9.toUpperCase() === correctAnswer9) {
+    alert("Thats right! You earned 100 points!");
+    player1Round3Points += 100;
+    finalPlayer1Points += 100;
+    
+  } else {
+    
+    alert(`Thats not right! The correct answer was : ${correctAnswer9}. 0 points earned.`);
+    
+  }  
+    
+  //-------------------------------------------------------------------------------------------------------------// 
+  //(10)  
+  //Player Two 5th trivia question 
+  var player2Question10 = prompt(`Player 2: What color eyes do most humans have?`);
+  // const correctAnswer10 = 'BROWN';  
+  const correctAnswer10 = 'TEST';  
+    
+  if (player2Question10.toUpperCase() === correctAnswer10) {
+    alert("Thats right! You earned 100 points!");
+    player2Round3Points += 100;
+    finalPlayer2Points += 100;
+  } else {
+    
+    alert(`Thats not right! The correct answer was : ${correctAnswer10}. 0 points earned.`);
+   
+  }     
+    
+  //-------------------------------------------------------------------------------------------------------------// 
+  //Levels of Rank for Player 1  
+   if (finalPlayer1Points === 500) {
+    player1Rank = 'Platinum';
+  } else if (finalPlayer1Points >= 300) {
+    player1Rank = 'Diamond';
+  } else if (finalPlayer1Points >= 200) {
+    player1Rank = 'Gold';
+  } else {
+    player1Rank = "Silver"
+  }
+    
+  //-------------------------------------------------------------------------------------------------------------//   
+  //Levels of Rank for Player 2
+   if (finalPlayer2Points === 500) {
+    player2Rank = 'Platinum';
+  } else if (finalPlayer2Points >= 300) {
+    player2Rank = 'Diamond';
+  } else if (finalPlayer2Points >= 200) {
+    player2Rank = 'Gold';
+  } else {
+    player2Rank = "Silver"
+  }  
+  
+    
+  var finalWinner;  
+    
+  if (finalPlayer1Points > finalPlayer2Points ) {
+   finalWinner = player1Name ;   
+  } else {
+   finalWinner = player2Name ; 
+  }  
+    
+    
+  // Select the main element on HTML  
+  const main = document.querySelector('main');  
+  //Show results to the <main element>  
+  main.innerHTML = 
+    `
+    <h1>The Final Winner is: ${finalWinner}</h1>
+    
+    <h2>Player 1: ${player1Name}, you've earned ${player1Rank} rank!<h2>
+    <p>Points earned: <strong>${finalPlayer1Points}</strong></p>
+    
+    <h2>Player 2: ${player2Name}, you've earned ${player2Rank} rank!<h2>
+    <p>Points earned: <strong>${finalPlayer2Points}</strong></p>
+    
+    <button type="button" onclick="beginPlay() ">Reset</button>
+    
+    `;     
+  
+  
+  
+  }
+  
+  
+  
+    
+    //-------------------------------------------------------------------------------------------------------------// 
+  //Levels of Rank for Player 1  
+  //  if (player1Points === 500) {
+  //   player1Rank = 'Smarty Pants';
+  // } else if (player1Points >= 300) {
+  //   player1Rank = 'Studious';
+  // } else if (player1Points >= 200) {
+  //   player1Rank = 'Need of improvement';
+  // } else {
+  //   player1Rank = "Class Dunce"
+  // }
+    
+  // //-------------------------------------------------------------------------------------------------------------//   
+  // //Levels of Rank for Player 2
+  //  if (player2Points === 500) {
+  //   player2Rank = 'Smarty Pants';
+  // } else if (player2Points >= 300) {
+  //   player2Rank = 'Studious';
+  // } else if (player2Points >= 200) {
+  //   player2Rank = 'Need of improvement';
+  // } else {
+  //   player2Rank = "Class Dunce"
+  // }  
+    
+  // let winner= '';
+    
+  // if (player1Rank > player2Rank ) {
+  //  winner = player1Name ;   
+  // } else {
+  //  winner = player2Name ; 
+  // }  
+    
+    
+  // // Select the main element on HTML  
+  // const main = document.querySelector('main');  
+  // //Show results to the <main element>  
+  // main.innerHTML = 
+  //   `
+  //   <h1>The Winner is: ${winner}</h1>
+    
+  //   <h2>Player 1: ${player1Name}, you've earned ${player1Rank} rank!<h2>
+  //   <p>Points earned: <strong>${player1Points}</strong></p>
+    
+  //   <h2>Player 2: ${player2Name}, you've earned ${player2Rank} rank!<h2>
+  //   <p>Points earned: <strong>${player2Points}</strong></p>
+    
+  //   `;   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  // document.querySelector('h2').innerHTML = player2Name;
+  // const player2Question = promt(`Which planet is mostly water?`);
+  // const correctAnswer = 'Earth';
+  
+  //  function player1() {          
+  //    let player1Name = document.getElementById("player1Input").value;
+  //         if (player1Name != null) {
+  //         document.getElementById("Player1").innerHTML =
+  //         `<p>
+  //         Hello ${player1Name}! Ready to play some trivia?
+  //         </p>`
+          
+  //         ;
+  //   }
+  //  }  
+  
+  // function player1Name() {
+  //   let player1Name = prompt("Please enter your name", "Your name here");
+  //   if (player1Name != null) {
+  //     document.getElementById("Player1").innerHTML =
+  //     `Hello ${player1Name}! Ready to play some trivia?`;
+  //   }
+  // }
+  
+  // function player2Name() {
+  //   let player2Name = prompt("Please enter your name", "Your name here");
+  //   if (player2Name != null) {
+  //     document.getElementById("Player1").innerHTML =
+  //     `Hello ${player2Name}! Let's go!`;
+  //   }
+  // }
+  // var player1Name = document.getElementById("name").nextSibling.innerHTML; 
+  //   document.getElementById("Player1").innerHTML = player1Name;
+  //   let player1Name = event.target.nextSibling.innerHTML;
+  
+  
+  
+  // Booleen question option
+  // When the game begins, the guess is falsey
+  // if rightAnswer = false;
+  // const answer = MERCURY; //The right answer
+  // const guess = //prompt(`Which planet is closest to the sun?`);
+  
+  // // 1. Test if a players guess matches the answer
+  // // 2. Change the value of rightAnswer to true if they match
+  // if (rightAnswer === true) {
+  //   document.getElementById('answer-box').innerHTML = `Thats right!`;
+  // } else {
+  //   document.getElementById('answer-box').innerHTML = `Thats not right! The correct answer was : ${answer}`;
+  // }
+  
+  // function rightAnswer() {
+  //   document.getElementById("demo").innerHTML = "That's right!";
+  // }
+  
+  // function wrongAnswer() {
+  //   document.getElementById("demo").innerHTML = "That's not right!";
+  // }
+  
+  // function myFunction() {
+  //   document.getElementById("demo").innerHTML = "Paragraph changed!";
+  // }
+  // const message
+        
+  // let playerOneScore = 0;
+  // let playerTwoScore = 0;
+  
+  // let score = 0;
+  // score += __;
+  
+  // let playOneFinalScore = 0;
+  // let playTwoFinalScore = 0;
+  
+  
+  
+  // const button = document.getElementById('button');
+  // const input = document.getElementById('input');
+  
+  // button.addEventListener('click', () => {
+  //   heading.style.color = input.value;
 </script>   
 </body>
 
