@@ -1,5 +1,5 @@
 Show off all features of the app:
-  -Asking a question and getting a response is the heart of the program.
+  -Asking a question and testing a response is the heart of the program. Two players play trivia to see who can win each round and who could be the ultimate winner at the end.
 
 Explain the technical details:
 
