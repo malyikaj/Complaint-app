@@ -5,456 +5,357 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guessing Game</title>
+  <style>
+      * {
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+  background: #f4f7f8;
+}
+
+body {
+  color: #384047;
+}
+
+p {
+  text-align: center;
+  padding: ;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  border: 1px solid #3ac162;
+  height: 70px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 20px;
+  font-style: normal;
+  border-radius: 5px;
+  width: 10%;
+  margin: auto;
+  box-shadow: 3px 5px 3px grey;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  transform: scale(1.1); 
+}
+
+.button:active {
+transform: translateY(1px);
+}
+
+  </style>
 </head>
 <body>
 <main>
-  <h1></h1> 
+  <h1>Ready to play?</h1> 
   <h2></h2> 
-<p>Start the game.</p>
+<p>Click the button to start the a trivia game.</p>
 <p id="Player1"></p>
   
   
  <button type="button" onclick="beginPlay() ">Start</button>
 <!--  <input type="text" id="name" name="user_name"> -->
        
-<button onclick="roundTwo()">Round 2</button>
+<!-- <button onclick="roundTwo()">Reset Round</button> -->
 
 <p id="Player2"></p>
     
-  </main> 
-<script>
-  function beginPlay() {
+  </main>  
   
+  <script>
+
+function beginPlay() {
   var player1Name = prompt("Enter your name, Player One");
-  var player2Name = prompt("Enter your name, Player Two"); 
-    
-  // When Trivia begins for Player One and Player Two, it starts with are no correct answers    
-  var player1RoundPoints = 0; 
+  var player2Name = prompt("Enter your name, Player Two");
+
+  // When Trivia begins for Player One and Player Two, it starts with are no correct answers
+  var player1RoundPoints = 0;
   var player2RoundPoints = 0;
-  
-  //Final Player points starts at 0 and will be collected for the final score 
+
+  //Final Player points starts at 0 and will be collected for the final score
   var finalPlayer1Points = 0;
   var finalPlayer2Points = 0;
-    
-  var player1Rank; //Store the rank of the player  
-  var player2Rank;  //Store the rank of the player  
-    
-  var winner;  
-  
+
+  var player1Rank; //Store the rank of the player
+  var player2Rank; //Store the rank of the player
+
+  var winner;
+
   alert("Round 1. Each player has two questions.");
-  
-  
+
   //-------------------------------------------------------------------------------------------------------------//
-  // (1)  
-  //Player One 1st trivia question   
-  var player1Question1 = prompt(`Player 1: Which video game company made the Dreamcast console?`);
+  // (1)
+  //Player One 1st trivia question
+  var player1Question1 = prompt(
+    `Player 1: Which video game company made the Dreamcast console?`
+  );
   // const correctAnswer1 = 'SEGA';
-  const correctAnswer1 = 'TEST';  
-    
+  const correctAnswer1 = "TEST";
+
   if (player1Question1.toUpperCase() === correctAnswer1) {
     alert(`That's right! You earned 100 points!`);
     player1RoundPoints += 100;
-    finalPlayer1Points += 100; 
-    
+    finalPlayer1Points += 100;
   } else {
-    
-    alert(`Thats not right! The correct answer was : ${correctAnswer1}. 0 points earned.`);
-    
-  }  
-    
-  //-------------------------------------------------------------------------------------------------------------//  
-  //(2)  
-  //Player Two 1st trivia question  
+    alert(
+      `Thats not right! The correct answer was : ${correctAnswer1}. 0 points earned.`
+    );
+  }
+
+  //-------------------------------------------------------------------------------------------------------------//
+  //(2)
+  //Player Two 1st trivia question
   var player2Question2 = prompt(`Player 2: What is the rarest M&M color?`);
-  const correctAnswer2 = 'TEST';
-  // const correctAnswer2 = 'BROWN';  
-    
+  const correctAnswer2 = "TEST";
+  // const correctAnswer2 = 'BROWN';
+
   if (player2Question2.toUpperCase() === correctAnswer2) {
     alert("Thats right! You earned 100 points!");
     player2RoundPoints += 100;
     finalPlayer2Points += 100;
-    
   } else {
-    
-    alert(`Not quite it...the right answer was : ${correctAnswer2}. 0 points earned.`);
-   
+    alert(
+      `Not quite it...the right answer was : ${correctAnswer2}. 0 points earned.`
+    );
   }
-  
-    
-      
-  //-------------------------------------------------------------------------------------------------------------// 
-  //(3)  
-  //Player One 2nd trivia question 
-  var player1Question3 = prompt(`Player 1: In a website browser address bar, what does “WWW” stand for?`); 
-  // const correctAnswer3 = 'WORLD WIDE WEB';  
-  const correctAnswer3 = 'TEST';   
-    
+
+  //-------------------------------------------------------------------------------------------------------------//
+  //(3)
+  //Player One 2nd trivia question
+  var player1Question3 = prompt(
+    `Player 1: In a website browser address bar, what does “WWW” stand for?`
+  );
+  // const correctAnswer3 = 'WORLD WIDE WEB';
+  const correctAnswer3 = "TEST";
+
   if (player1Question3.toUpperCase() === correctAnswer3) {
     alert("Thats right! You earned 100 points!");
     player1RoundPoints += 100;
     finalPlayer1Points += 100;
   } else {
-    
     alert(`Almost! ${correctAnswer3} was the right answer. 0 points earned.`);
-    
   }
-    
-                  
-  //--------------------------------------------------------------------------------------------------------------// 
-  //(4)  
-  //Player Two 2nd trivia question   
-  var player2Question4 = prompt(`Player 2: What is Will Smith's real first name?`);
-  // const correctAnswer4 = 'WILLARD'; 
-  const correctAnswer4 = 'TEST';    
-    
+
+  //--------------------------------------------------------------------------------------------------------------//
+  //(4)
+  //Player Two 2nd trivia question
+  var player2Question4 = prompt(
+    `Player 2: What is Will Smith's real first name?`
+  );
+  // const correctAnswer4 = 'WILLARD';
+  const correctAnswer4 = "TEST";
+
   if (player2Question4.toUpperCase() === correctAnswer4) {
     alert("That's right! You earned 100 points!");
     player2RoundPoints += 100;
     finalPlayer2Points += 100;
   } else {
-    
-    alert(`Thats not right! The correct answer was : ${correctAnswer4}. 0 points earned.`);
-    
-  }    
-    
-  
-  if (player1RoundPoints == player2RoundPoints){
+    alert(
+      `Thats not right! The correct answer was : ${correctAnswer4}. 0 points earned.`
+    );
+  }
+
+  if (player1RoundPoints == player2RoundPoints) {
     alert(`It's a tie! ${player1Name} has ${player1RoundPoints} and so does ${player2Name} with ${player2RoundPoints} points!
-          Next round!`)
-    
-  } else if (player1RoundPoints > player2RoundPoints ) {
-   winner = player1Name ;
-   alert(`${winner} is the winner for this round! ${player1Name} has ${player1RoundPoints} so far and ${player2Name} has ${player2RoundPoints} points!`);  
+        Next round!`);
+  } else if (player1RoundPoints > player2RoundPoints) {
+    winner = player1Name;
+    alert(
+      `${winner} is the winner for this round! ${player1Name} has ${player1RoundPoints} so far and ${player2Name} has ${player2RoundPoints} points!`
+    );
   } else {
-   winner = player2Name ;
-   alert(`${winner} is the winner for this round! ${player1Name} has ${player1RoundPoints} so far and ${player2Name} has ${player2RoundPoints} points!`);  
-  }   
-  
-  
-  
-  //-------------------------------------------------------------------------------------------------------------// 
-  alert("Round 2");  
-  var player1Round2Points = 0; 
-  var player2Round2Points = 0; 
-  //(5)  
-  //Player One 3rd trivia question  
-  let player1Question5 = prompt(`Player 1: Which team holds the record for the most consecutive NBA titles?`);
-  // const correctAnswer5 = 'LAKERS';  
-  const correctAnswer5 = 'TEST';    
-    
+    winner = player2Name;
+    alert(
+      `${winner} is the winner for this round! ${player1Name} has ${player1RoundPoints} so far and ${player2Name} has ${player2RoundPoints} points!`
+    );
+  }
+
+  //-------------------------------------------------------------------------------------------------------------//
+  alert("Round 2");
+  var player1Round2Points = 0;
+  var player2Round2Points = 0;
+  //(5)
+  //Player One 3rd trivia question
+  let player1Question5 = prompt(
+    `Player 1: Which team holds the record for the most consecutive NBA titles?`
+  );
+  // const correctAnswer5 = 'LAKERS';
+  const correctAnswer5 = "TEST";
+
   if (player1Question5.toUpperCase() === correctAnswer5) {
     alert("Thats right! You earned 100 points!");
     player1Round2Points += 100;
     finalPlayer1Points += 100;
   } else {
-    
-    alert(`Thats not right! The correct answer was : ${correctAnswer5}. 0 points earned.`);
-   
-  }  
-     
-  //-------------------------------------------------------------------------------------------------------------// 
-  //(6)  
+    alert(
+      `Thats not right! The correct answer was : ${correctAnswer5}. 0 points earned.`
+    );
+  }
+
+  //-------------------------------------------------------------------------------------------------------------//
+  //(6)
   //Player Two 3rd trivia question
-  var player2Question6 = prompt(`Player 2: In the Marvel cinematic universe, what is the name of Thors home planet?`);
+  var player2Question6 = prompt(
+    `Player 2: In the Marvel cinematic universe, what is the name of Thors home planet?`
+  );
   // const correctAnswer6 = 'ASGARD';
-  const correctAnswer6 = 'TEST';    
-    
+  const correctAnswer6 = "TEST";
+
   if (player2Question6.toUpperCase() === correctAnswer6) {
     alert("Thats right! You earned 100 points!");
     player2Round2Points += 100;
     finalPlayer2Points += 100;
   } else {
-    
-    alert(`Thats not right! The correct answer was : ${correctAnswer6}. 0 points earned.`);
-    
-  }    
-     
-  //-------------------------------------------------------------------------------------------------------------// 
-  //(7)  
+    alert(
+      `Thats not right! The correct answer was : ${correctAnswer6}. 0 points earned.`
+    );
+  }
+
+  //-------------------------------------------------------------------------------------------------------------//
+  //(7)
   //Player One 4th trivia question
   var player1Question7 = prompt(`Player 1: Who is Marshal Mathers?`);
-  // const correctAnswer7 = 'EMINEM'; 
-  const correctAnswer7 = 'TEST';    
-    
+  // const correctAnswer7 = 'EMINEM';
+  const correctAnswer7 = "TEST";
+
   if (player1Question7.toUpperCase() === correctAnswer7) {
     alert("Thats right! You earned 100 points!");
     player1Round2Points += 100;
     finalPlayer1Points += 100;
-    
   } else {
-    
-    alert(`Thats not right! The correct answer was : ${correctAnswer7}. 0 points earned.`);
-    
-  }    
-    
-  //-------------------------------------------------------------------------------------------------------------// 
-  //(8)  
+    alert(
+      `Thats not right! The correct answer was : ${correctAnswer7}. 0 points earned.`
+    );
+  }
+
+  //-------------------------------------------------------------------------------------------------------------//
+  //(8)
   //Player Two 4th trivia question
-  
+
   var player2Question8 = prompt(`Player 2: Where was Cardi B born and raised?`);
-  // const correctAnswer8 = 'BRONX';  
-  const correctAnswer8 = 'TEST';  
-    
+  // const correctAnswer8 = 'BRONX';
+  const correctAnswer8 = "TEST";
+
   if (player2Question8.toUpperCase() === correctAnswer8) {
     alert("Thats right! You earned 100 points!");
     player2RoundPoints += 100;
     finalPlayer2Points += 100;
-    
   } else {
-    
-    alert(`Thats not right! The correct answer was : ${correctAnswer8}. 0 points earned.`);
-    
-  }    
-  
-  
-  if (player1Round2Points > player2Round2Points ) {
-   winner = player1Name ;   
+    alert(
+      `Thats not right! The correct answer was : ${correctAnswer8}. 0 points earned.`
+    );
+  }
+
+  if (player1Round2Points > player2Round2Points) {
+    winner = player1Name;
   } else {
-   winner = player2Name ; 
-  }   
-    
-  alert(`${winner} is the winner for this round! ${player1Name} has ${player1Round2Points} for this round and ${player2Name} has ${player2Round2Points} points for this round!`);   
-    
-    
-  
-  //-------------------------------------------------------------------------------------------------------------// 
+    winner = player2Name;
+  }
+
+  alert(
+    `${winner} is the winner for this round! ${player1Name} has ${player1Round2Points} for this round and ${player2Name} has ${player2Round2Points} points for this round!`
+  );
+
+  //-------------------------------------------------------------------------------------------------------------//
   //(9)
-  alert("Round 3 Final Round. Only 1 question per player.");    
-    
-  var player1Round3Points = 0; 
-  var player2Round3Points = 0; 
-  
-  //Player One 5th trivia question 
-  var player1Question9 = prompt(`Player 1: Which singer’s real name is Stefani Joanne Angelina Germanotta?`);
+  alert("Round 3 Final Round. Only 1 question per player.");
+
+  var player1Round3Points = 0;
+  var player2Round3Points = 0;
+
+  //Player One 5th trivia question
+  var player1Question9 = prompt(
+    `Player 1: Which singer’s real name is Stefani Joanne Angelina Germanotta?`
+  );
   // const correctAnswer9 = 'LADY GAGA';
-  const correctAnswer9 = 'TEST';    
-    
+  const correctAnswer9 = "TEST";
+
   if (player1Question9.toUpperCase() === correctAnswer9) {
     alert("Thats right! You earned 100 points!");
     player1Round3Points += 100;
     finalPlayer1Points += 100;
-    
   } else {
-    
-    alert(`Thats not right! The correct answer was : ${correctAnswer9}. 0 points earned.`);
-    
-  }  
-    
-  //-------------------------------------------------------------------------------------------------------------// 
-  //(10)  
-  //Player Two 5th trivia question 
-  var player2Question10 = prompt(`Player 2: What color eyes do most humans have?`);
-  // const correctAnswer10 = 'BROWN';  
-  const correctAnswer10 = 'TEST';  
-    
+    alert(
+      `Thats not right! The correct answer was : ${correctAnswer9}. 0 points earned.`
+    );
+  }
+
+  //-------------------------------------------------------------------------------------------------------------//
+  //(10)
+  //Player Two 5th trivia question
+  var player2Question10 = prompt(
+    `Player 2: What color eyes do most humans have?`
+  );
+  // const correctAnswer10 = 'BROWN';
+  const correctAnswer10 = "TEST";
+
   if (player2Question10.toUpperCase() === correctAnswer10) {
     alert("Thats right! You earned 100 points!");
     player2Round3Points += 100;
     finalPlayer2Points += 100;
   } else {
-    
-    alert(`Thats not right! The correct answer was : ${correctAnswer10}. 0 points earned.`);
-   
-  }     
-    
-  //-------------------------------------------------------------------------------------------------------------// 
-  //Levels of Rank for Player 1  
-   if (finalPlayer1Points === 500) {
-    player1Rank = 'Platinum';
-  } else if (finalPlayer1Points >= 300) {
-    player1Rank = 'Diamond';
-  } else if (finalPlayer1Points >= 200) {
-    player1Rank = 'Gold';
-  } else {
-    player1Rank = "Silver"
+    alert(
+      `Thats not right! The correct answer was : ${correctAnswer10}. 0 points earned.`
+    );
   }
-    
-  //-------------------------------------------------------------------------------------------------------------//   
-  //Levels of Rank for Player 2
-   if (finalPlayer2Points === 500) {
-    player2Rank = 'Platinum';
-  } else if (finalPlayer2Points >= 300) {
-    player2Rank = 'Diamond';
-  } else if (finalPlayer2Points >= 200) {
-    player2Rank = 'Gold';
-  } else {
-    player2Rank = "Silver"
-  }  
-  
-    
-  var finalWinner;  
-    
-  if (finalPlayer1Points > finalPlayer2Points ) {
-   finalWinner = player1Name ;   
-  } else {
-   finalWinner = player2Name ; 
-  }  
-    
-    
-  // Select the main element on HTML  
-  const main = document.querySelector('main');  
-  //Show results to the <main element>  
-  main.innerHTML = 
-    `
-    <h1>The Final Winner is: ${finalWinner}</h1>
-    
-    <h2>Player 1: ${player1Name}, you've earned ${player1Rank} rank!<h2>
-    <p>Points earned: <strong>${finalPlayer1Points}</strong></p>
-    
-    <h2>Player 2: ${player2Name}, you've earned ${player2Rank} rank!<h2>
-    <p>Points earned: <strong>${finalPlayer2Points}</strong></p>
-    
-    <button type="button" onclick="beginPlay() ">Reset</button>
-    
-    `;     
-  
-  
-  
-  }
-  
-  
-  
-    
-    //-------------------------------------------------------------------------------------------------------------// 
-  //Levels of Rank for Player 1  
-  //  if (player1Points === 500) {
-  //   player1Rank = 'Smarty Pants';
-  // } else if (player1Points >= 300) {
-  //   player1Rank = 'Studious';
-  // } else if (player1Points >= 200) {
-  //   player1Rank = 'Need of improvement';
-  // } else {
-  //   player1Rank = "Class Dunce"
-  // }
-    
-  // //-------------------------------------------------------------------------------------------------------------//   
-  // //Levels of Rank for Player 2
-  //  if (player2Points === 500) {
-  //   player2Rank = 'Smarty Pants';
-  // } else if (player2Points >= 300) {
-  //   player2Rank = 'Studious';
-  // } else if (player2Points >= 200) {
-  //   player2Rank = 'Need of improvement';
-  // } else {
-  //   player2Rank = "Class Dunce"
-  // }  
-    
-  // let winner= '';
-    
-  // if (player1Rank > player2Rank ) {
-  //  winner = player1Name ;   
-  // } else {
-  //  winner = player2Name ; 
-  // }  
-    
-    
-  // // Select the main element on HTML  
-  // const main = document.querySelector('main');  
-  // //Show results to the <main element>  
-  // main.innerHTML = 
-  //   `
-  //   <h1>The Winner is: ${winner}</h1>
-    
-  //   <h2>Player 1: ${player1Name}, you've earned ${player1Rank} rank!<h2>
-  //   <p>Points earned: <strong>${player1Points}</strong></p>
-    
-  //   <h2>Player 2: ${player2Name}, you've earned ${player2Rank} rank!<h2>
-  //   <p>Points earned: <strong>${player2Points}</strong></p>
-    
-  //   `;   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  // document.querySelector('h2').innerHTML = player2Name;
-  // const player2Question = promt(`Which planet is mostly water?`);
-  // const correctAnswer = 'Earth';
-  
-  //  function player1() {          
-  //    let player1Name = document.getElementById("player1Input").value;
-  //         if (player1Name != null) {
-  //         document.getElementById("Player1").innerHTML =
-  //         `<p>
-  //         Hello ${player1Name}! Ready to play some trivia?
-  //         </p>`
-          
-  //         ;
-  //   }
-  //  }  
-  
-  // function player1Name() {
-  //   let player1Name = prompt("Please enter your name", "Your name here");
-  //   if (player1Name != null) {
-  //     document.getElementById("Player1").innerHTML =
-  //     `Hello ${player1Name}! Ready to play some trivia?`;
-  //   }
-  // }
-  
-  // function player2Name() {
-  //   let player2Name = prompt("Please enter your name", "Your name here");
-  //   if (player2Name != null) {
-  //     document.getElementById("Player1").innerHTML =
-  //     `Hello ${player2Name}! Let's go!`;
-  //   }
-  // }
-  // var player1Name = document.getElementById("name").nextSibling.innerHTML; 
-  //   document.getElementById("Player1").innerHTML = player1Name;
-  //   let player1Name = event.target.nextSibling.innerHTML;
-  
-  
-  
-  // Booleen question option
-  // When the game begins, the guess is falsey
-  // if rightAnswer = false;
-  // const answer = MERCURY; //The right answer
-  // const guess = //prompt(`Which planet is closest to the sun?`);
-  
-  // // 1. Test if a players guess matches the answer
-  // // 2. Change the value of rightAnswer to true if they match
-  // if (rightAnswer === true) {
-  //   document.getElementById('answer-box').innerHTML = `Thats right!`;
-  // } else {
-  //   document.getElementById('answer-box').innerHTML = `Thats not right! The correct answer was : ${answer}`;
-  // }
-  
-  // function rightAnswer() {
-  //   document.getElementById("demo").innerHTML = "That's right!";
-  // }
-  
-  // function wrongAnswer() {
-  //   document.getElementById("demo").innerHTML = "That's not right!";
-  // }
-  
-  // function myFunction() {
-  //   document.getElementById("demo").innerHTML = "Paragraph changed!";
-  // }
-  // const message
-        
-  // let playerOneScore = 0;
-  // let playerTwoScore = 0;
-  
-  // let score = 0;
-  // score += __;
-  
-  // let playOneFinalScore = 0;
-  // let playTwoFinalScore = 0;
-  
-  
-  
-  // const button = document.getElementById('button');
-  // const input = document.getElementById('input');
-  
-  // button.addEventListener('click', () => {
-  //   heading.style.color = input.value;
-</script>   
-</body>
 
+  //-------------------------------------------------------------------------------------------------------------//
+  //Levels of Rank for Player 1
+  if (finalPlayer1Points === 500) {
+    player1Rank = "Platinum";
+  } else if (finalPlayer1Points >= 300) {
+    player1Rank = "Diamond";
+  } else if (finalPlayer1Points >= 200) {
+    player1Rank = "Gold";
+  } else {
+    player1Rank = "Silver";
+  }
+
+  //-------------------------------------------------------------------------------------------------------------//
+  //Levels of Rank for Player 2
+  if (finalPlayer2Points === 500) {
+    player2Rank = "Platinum";
+  } else if (finalPlayer2Points >= 300) {
+    player2Rank = "Diamond";
+  } else if (finalPlayer2Points >= 200) {
+    player2Rank = "Gold";
+  } else {
+    player2Rank = "Silver";
+  }
+
+  var finalWinner;
+
+  if (finalPlayer1Points > finalPlayer2Points) {
+    finalWinner = player1Name;
+  } else {
+    finalWinner = player2Name;
+  }
+
+  // Select the main element on HTML
+  const main = document.querySelector("main");
+  //Show results to the <main element>
+  main.innerHTML = `
+  <h1>The Final Winner is: ${finalWinner}</h1>
+  
+  <h2>Player 1: ${player1Name}, you've earned ${player1Rank} rank!<h2>
+  <p>Points earned: <strong>${finalPlayer1Points}</strong></p>
+  
+  <h2>Player 2: ${player2Name}, you've earned ${player2Rank} rank!<h2>
+  <p>Points earned: <strong>${finalPlayer2Points}</strong></p>
+  
+  <button type="button" onclick="beginPlay() ">Reset</button>
+  
+  `;
+}
+
+  </script>
+
+</body>
 </html>
