@@ -5,6 +5,7 @@ Show off all features of the app:
 Explain the technical details:
 
  -First, I declared variables for the points each player can get during each round. I also set variables for the amount of points in total all throughout the game. This allowed me to keep track of points during around while keeping track of total points in the game. I kept track of points earned in those variables
+ 
  -I kept track of ranking each player had and did a series of if and else statements to determine their level.
  
 Explain the technical challenges:
