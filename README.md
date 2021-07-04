@@ -14,7 +14,5 @@ Explain the technical challenges:
 
 Explain which improvements you might make:
 
-  -I would work more on the CSS and animation. I would also like to master APIs so that I can have the questions to be random. I would also like to add multiple choice answers. Lastly, I could've simplified this game significantly. There was room for functions, loops etc. because my game is very repetitive and it repeats itself. 
-  
-Not bad for a first try!
+  -I would work more on the CSS and animation. I would also like to master APIs so that I can have the questions to be random. I would also like to add multiple choice answers. Lastly, I could've simplified this game significantly. There was room for functions, loops etc. 
 
