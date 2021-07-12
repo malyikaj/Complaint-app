@@ -1,0 +1,58 @@
+Question: What’s the hardest rock?
+    Answer 0:  A diamond
+    Answer 1:
+    Answer 2:
+    Answer 3:
+
+Question: Name the world’s largest ocean?
+    Answer 0:  Pacific
+    Answer 1:
+    Answer 2:
+    Answer 3:
+Question:  What’s the most expensive home in the world?
+    Answer 0:  Buckingham Palace
+    Answer 1:
+    Answer 2:
+    Answer 3:
+
+Question: How many weeks are in a year?
+    Answer 0:  
+    Answer 1: 52
+    Answer 2:
+    Answer 3:
+
+Question: What is the symbol for potassium?
+    Answer 0: K
+    Answer 1:
+    Answer 2:
+    Answer 3:
+
+Question: In which video game did Super Mario first appear? 
+    Answer 0: Donkey Kong
+    Answer 1:
+    Answer 2:
+    Answer 3:
+
+Question:  What is the name of the mysterious force thought to account for over 85 percent of the universe?
+    Answer 0: Dark Matter
+    Answer 1:
+    Answer 2:
+    Answer 3:    
+
+Question: What is the oldest ancient wonder of the world?
+    Answer 0: Egypt
+    Answer 1:
+    Answer 2:
+    Answer 3:
+
+Question: What is the title of Titanic’s theme song?
+    Answer 0: My Heart Will Go On
+    Answer 1:
+    Answer 2:
+    Answer 3:
+
+Question: When Michael Jordan played for the Chicago Bulls, how many NBA Championships did he win?
+    Answer 0: 6
+    Answer 1:
+    Answer 2:
+    Answer 3:
